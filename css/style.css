@@ -1,0 +1,32 @@
+
+/*
+.row > div {
+    border: 1px solid black
+  }
+
+  */
+
+  body, html {
+    background-color: rgb(40, 40, 40);
+    margin: 0;
+    height:100%;
+  }
+
+  .spacing{
+    padding: 20px 100px;
+  }
+
+.resources{
+    width: 100%;   
+}
+
+section{
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  border: 1px solid white;
+}
+
+.homepage{
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}

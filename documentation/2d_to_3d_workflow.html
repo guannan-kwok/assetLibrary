@@ -1,0 +1,365 @@
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+  <!-- Css stylesheet-->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Google fonts/icons-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  
+</head>
+
+<body class="homepage spacing">
+<h1 id="3d-logo-creation-from-2d-illustration">3D Logo Creation From 2D Illustration</h1>
+<a href="../index.html"><href><h4>Back to Homepage</h4></a>
+
+<h2 id="1-introduction">1. Introduction</h2>
+<p>This article outlines a series of steps followed to convert a 2D logo design (illustration) to a 3D object for rendering or online deployment. As this is a general process the goal here is to provide and outline with some issues and solutions encountered for the mutual benefit of others.</p>
+<p>Some interesting points of note for the workflows:</p>
+<ol>
+<li>Image / object compositing which works in 2D may not translate into proper 3D geometry.</li>
+<li>Asset management organization can differ between 2D and 3D.</li>
+<li>Shading, lighting, and texturing while not necessary in 2D is needed for rendering in 3D. Such items should be created as separable reusable assets which can be applied to geometry.</li>
+<li>3D geometry should be split into logical assets (often based on by appearance (material).</li>
+</ol>
+<p>The source logo is one which was produced for a hair salon business as shown below.</p>
+
+<p><img width=80% src="2d_to_3d_images/image001.jpg"></p>
+<p><em>Figure 1 : Initial logo design on left and snapshots taken during the creation process.</em></p>
+
+<h2 id="tools">Tools</h2>
+<p>It is assumed for this article that there is access to Adobe Creative Cloud products and some 3D editor. It is possible to use another SVG editor such as Inkscape if appropriate.</p>
+<p>The main tools used for this process are:</p>
+<ol>
+<li>Figma : The original icon was created here as part of the design process.</li>
+<li>Adobe Illustrator : The icon was cleaned up here to create an appropriate 2D vector graphic version. (Note: At time of writing, 3D creation is available but appearance setting relies on usage of Adobe Substance Design. This workflow has not been tried but assets appear tied to this ecosystem).</li>
+<li>Autodesk Maya: One option to import vector graphics to produce a 3D version.</li>
+<li>Blender (3.1): Another option to import vector graphics to produce a 3D version. For those who cannot afford the expense of something like Maya. Also used for conversion to standard file format deployments such as for Web (glTF).</li>
+<li>Adobe Photoshop / Camtasia: Either of these were used to create animated images or movies. There are other tools which could be used in lieu of these including free Open Source tools such as ScreenToGif.</li>
+<li>GitHub: Used for maintenance and tracking of the various assets. At each step along the way new revisions were checked into a GitHub repository.</li>
+</ol>
+<p>Some useful tools to help with visual checks included:</p>
+<ol>
+<li>Visual Studio Code: There are several syntax and visual preview plug-ins available.</li>
+<li>Visualizer utilities which come native with the platform (e.g., Mac, Microsoft Windows (obj, and glTF).</li>
+</ol>
+
+<h2 id="2-figma-workflow">2. Figma Workflow</h2>
+<p>The icon shown was created in Figma using a series of font and geometric shapes. As a first attempt all the icon the layers were grouped and then exported as an SVG file. When importing the logo directly to Maya / Blender there were issues related to finding the appropriate vector paths for each part of the logo. This was due to disconnected / disjoint vector paths. As such, proper 3D shapes could not be derived. To address this, the SVG was first processed in Illustrator.</p>
+
+<h2 id="3-illustrator-workflow">3. Illustrator Workflow</h2>
+<p>The SVG saved in Figma was imported and then copied onto a blank canvas. The first step was to make sure that all the layers were grouped. After examining the assets, it was found that the icon consisted of several separate disconnected shapes.</p>
+<p>To fix this all assets were converted into paths so they could be manipulated. The middle rectangular shape which when applied in 2D as a filled overlay causes issues since it should not actually exist in 3D. It was thus subtracted from the “S” and the “C” sides using: Subtract from Shape Area. This cut out the area of the component from the underlying geometry resulting in two distinct closed vector paths (for the “S” and “C” respectively). </p>
+<p>The fill color for each path is set to be mono-chromatic as the colors are not used on import to create the 3D materials. The color palette was also exported separately for usage when creating 3D materials.</p>
+
+<table>
+<tr>
+<td><img width=213px src="2d_to_3d_images/image002.png">
+<td><img width=200px src="2d_to_3d_images/image003.png">
+<td><img width=256px src="2d_to_3d_images/image004.png">
+</tr>
+</table>
+<p><em>Figure 2: The rectangle in the middle of the “S” and “C” was removed using Subtract from Shape Area in the Pathfinder tool (on
+right). The icon was then grouped for export.</em></p>
+
+<h3 id="export-from-illustrator">Export from Illustrator</h3>
+<p>To allow for each object to be placed independently and to have different 3D materials, the “S” and “C”
+was exported as one SVG file and the “Hair Studio” part was exported as a second SVG file.</p>
+
+<table width="50%">
+<tr>
+<td><img width=100% src="2d_to_3d_images/image005.png">
+<td><img width=50% src="2d_to_3d_images/image006.png">
+</tr>
+</table>
+<p><em>Figure 3: The two parts of the logo.</em></p>
+
+<h2 id="4-maya-workflow">4. Maya Workflow</h2>
+<p>From inside Maya and “SVG” object was created for each SVG file, and the files were imported.</p>
+
+<h3 id="geometry-workflow">4.1 Geometry Workflow</h3>
+<p>The first thing to note is location of the transform pivot as by default it is in the lower left front corner of
+the object bounds. This is fine for 2D text on a plane but is non-intuitive for 3D transformation the icon
+(e.g., if you want to create a turntable animation of the icon. To address this the pivot was centered
+within the 3D bounding box.</p>
+
+<p><img width=80% src="2d_to_3d_images/image007.jpg"></p>
+<p><em>Figure 4: Pivot default position is in the bottom left corner.</em></p>
+
+<p>It may also be the case that the scale of the geometry needs to be modified. Though possible to scale within the SVG import node, it is more flexible to leave the geometry as unit size and scale using its parent transform. As the pivot was previously centered the scaling will be about the local origin of the object.</p>
+
+<table width="80%">
+<tr>
+<td><img width=100% src="2d_to_3d_images/image008.jpg">
+<td><img width=100% src="2d_to_3d_images/image009.jpg">
+</tr>
+</table>
+<p><em>Figure 5: After the pivot centered is centered, using the Modify-&gt;Center Pivot operation. The object has also been scaled about this new pivot as desired.</em></p>
+<p>The next modification was to the material type of the object. Originally Maya set the default material to Blinn which is not portable outside of Maya. To conform more with current material standards this was changed into a “Standard Surface” material. As part of the geometry setup step, it is also useful to set the material properties so it’s easier to see highlights and evaluate smoothness.</p>
+
+<table>
+ <tr>
+  <td>
+  <img width=512 src="2d_to_3d_images/image010.png">
+  </td>
+  <td>
+  <img width=100% src="2d_to_3d_images/image011.png">
+  </td>
+ </tr>
+</table>
+<p><em>Figure 6: Change from non-standard “Blinn material” to Standard Surface.</em></p>
+
+<p>Note: A generally good practice is to name both the object as well as the materials so that they can be more easily navigated to and managed. It is particularly useful to have good logical names when exporting to different 3D formats.</p>
+<p>With the basic geometry set up and a proper material to visualize we examined the actual geometry created. As a first step the curvature or smoothness was examined. When converting from an SVG path to 3D geometry it is tessellated. The more subdivisions used to sample for tessellation the better the match to the curvature of the original curves.</p>
+<p>The default setting the subdivisions for curved surfaces is generally too low and thus the shapes appear rough. To fix this the curvature resolution was increased to make it smoother. Note that the higher the curve resolution the greater the geometry and hence the larger the resource size. It is up to the user to determine a good balance.</p>
+
+<table cellpadding=20>
+ <tr>
+  <td>
+  <table cellspacing=0 cellpadding=0 width=320>
+   <tr>
+    <td>
+    <img width=100% src="2d_to_3d_images/image012.png">
+    </td>
+   </tr>
+   <tr>
+    <td>
+    <img width=100%% src="2d_to_3d_images/image013.png">
+    </td>
+   </tr>
+  </table>
+  </td>
+  <td>
+  <img width=100% src="2d_to_3d_images/image014.png">
+  </td>
+ </tr>
+</table>
+<p><em>Figure 7: Default curvature vs. curve resolution set to maximum.</em></p>
+
+<p>As a final step for initial arrangement, the objects are oriented from within the orthographic view by translating and scaling the objects.</p>
+<p><img width=512 src="2d_to_3d_images/image015.jpg"></p>
+<p><em>Figure 8: Desired placement for logo.</em></p>
+
+<h3 id="shading-material-workflow">4.2 Shading / Material Workflow</h3>
+
+<h4 id="lighting-workflow">4.2.1 Lighting Workflow</h4>
+
+<p>To visualize materials some lighting is required. For this a “sky dome” environment object was created. Any appropriate input image can be used. Here the following equirectangular (latitude-longitude) image from HDR Haven (which has a permissive license) was used: <a href="https://polyhaven.com/a/studio_small_03">https://polyhaven.com/a/studio_small_03</a> .</p>
+<p>It is also possible to produce your own 360 environments using a regular camera and stitching software, but this is beyond the scope of this article.</p>
+
+<p><img width=512 src="2d_to_3d_images/image016.jpg"></p>
+<p><em>Figure 9: Snapshot of logo with environment preview.</em></p>
+
+<h4 id="texturing-workflow">4.2.2 Texturing Workflow</h4>
+<p>Texture coordinates (UVs) allow for images to be mapped to the surface of the objects in the logo. Missing coordinates means nothing will be mapped, and poorly defined UVs may not end up mapping to the correct parts of the image or cause visual discontinuities.</p>
+<p>One way to diagnose this is to examine the mapping in the UV editor. It was found that the default UV projection used for imported SVGs did not produce a mapping for all texture coordinates as shown below:</p>
+
+<p><img width=512 src="2d_to_3d_images/image017.jpg"></p>
+<p><em>Figure 10: Various pieces of geometry created for the SVG have no texture coordinates. E.g., Part of the “S” is mapped.</em></p>
+
+<p>Another more intuitive way to diagnose these issues is to create a checker (or any regular pattern) texture and apply as the color for the materials. The checker can either be applied to the current shaders or applied to a new “diagnostic” shader for visualizing in 3D. Whatever approach which is most convenient may be used.</p>
+<!-- <img width=204 src="2d_to_3d_images/image018.png">-->
+<p><img width=512 src="2d_to_3d_images/image019.jpg"></p>
+<p>An easy way to create UVs is to apply a new UV projection which matches the shape of the object. For example, a cup shape could use a cylindrical projection. In this case a box projection was used to map texture coordinates for each part of the logo.</p>
+
+<table cellpadding=10 width="512">
+ <tr>
+  <td valign=top>
+      <img height=256 src="2d_to_3d_images/image020.jpg">
+  </td>
+  <td valign=top>
+    <img height=256 src="2d_to_3d_images/image021.jpg">
+  </td>
+ </tr>
+</table>
+
+<p>With textures correctly mapped any temporary shader used can be removed / unassigned. Different IBLs were experimented with for rendering along with different input parameter values or textures set on the shaders to achieve the desired effect.</p>
+
+<table cellpadding=10>
+ <tr>
+  <td valign=top>
+  <img width=300 src="2d_to_3d_images/image022.jpg">
+  </td>
+  <td valign=top>
+  <img width=512 src="2d_to_3d_images/image023.jpg">
+  </td>
+ </tr>
+</table>
+<p><em>Figure 11: Experimenting to create a metallic look for the logo.</em></p>
+
+<h4 id="rendered-output">4.2.3 Rendered Output</h4>
+<p>If output renders are desired, then camera position and rendered image resolution can be modified. While in the 3D viewport make sure to turn on gate masks and resolution masks to ensure that the logo objects are not clipped when rendering. Shown below are some sample renders using Arnold.</p>
+<p><img width=60% src="2d_to_3d_images/image024.jpg"></p>
+
+<h3 id="export-validation-workflow">4.3 Export / Validation Workflow</h3>
+
+<p>Some common export formats are: OBJ, GLTF, and USD. When export exporting the format or the reader for the format may not handle all geometry. For example, polygons which are greater than 3 or 4
+sides may not work. To be safe the geometry can be triangulated before export. Note that it might be worth to duplicate the original and only tesselate the copy. </p>
+<p>Depending on the format and package used again not all materials may export properly (or at all). If so, then materials may need to be (re)done after export.</p>
+<p>Once the objects have been exported you can preview it using a variety of viewers such as those found in editors like Visual Studio Code or the default “3D Viewer” on Windows platforms, or even browsers. </p>
+
+<table width=50% cellpadding=10>
+ <tr>
+  <td>
+  <img height=325 src="2d_to_3d_images/image025.jpg">
+  </td>
+  <td>
+  <table cellpadding=5>
+    <tr>
+    <td><img height=160 src="2d_to_3d_images/image026.jpg">
+    </td>
+   </tr>
+   <tr>
+    <td><img height=160 src="2d_to_3d_images/image027.jpg">
+    </td>
+   </tr>
+  </table>
+  </td>
+ </tr>
+</table>
+
+<p><em>Figure 12: Built in Windows viewer showing texture coordinates. On right, another 3D logo showing missing UVs (top) and UVs after being fixed (bottom).</em></p>
+
+<h3 id="animation-workflow-basic-turntable-setup">4.4 Animation Workflow: Basic Turntable Setup</h3>
+<p>To provide a way to examine the logo from a variety of angles, a looped animation was created to simulate the object rotating on a turntable. The first step was to determine which way was “up” (up-axis) and then set keyframes on the logo at frame 0 and frame 360 to match 0-to-360-degree rotations along that axis.</p>
+<p>In Maya the up-axis is Y. A “front” view was used to show how the object would rotate head-on at 0 degrees. Keyframes were placed at various points between 0 to 360 such as at 90, 180, and 270.</p>
+
+<p><img width=60% src="2d_to_3d_images/image028.jpg"></p>
+<p><em>Figure 13: Rotation on logo at a given keyframe.</em></p>
+
+<p>Upon playing back the animation it was noted that the object wasn’t rotating at a fixed speed. To fix this
+the animation curve needed to be “linearized” so the rate of rotate was even.</p>
+
+<table width=60% cellpadding=5>
+<tr>
+<td><img width=100% src="2d_to_3d_images/image029.jpg">
+<td><img width=100% src="2d_to_3d_images/image030.jpg">
+</tr>
+</table>
+<p><em>Figure 14: Pre and post linearize tangents for rotation in Y curve.</em></p>
+
+<p>The rendering process can be very long and for preview not worth the wait.
+Instead a quick way to record is to use the viewport to capture an animated gif. In this case ScreenToGif
+was used save on time for this demonstration.</p>
+<p>Shown below is another original “Grapes Icon” SVG (left) and the 3d version (right):</p>
+
+<table width=60% cellpadding="10">
+<tr>
+<td><img width=100% src="2d_to_3d_images/image031.png">
+<td><img width=100% src="2d_to_3d_images/image032.png">
+</tr>
+</table>
+<p></p>
+<img width=60% src="2d_to_3d_images/Grape_Logo_Turntable.gif">
+<p><em>Figure 15: Low quality animation capture using ScreenToGif.</em></p>
+
+<h2>5. Blender Workflow</h2>
+<p>The following workflow uses Blender version 3.0.1.</p>
+
+<h3>5.1 Geometry Workflow</h3>
+<p>SVG import in Blender takes a different approach for the geometry than Maya, where no 3D effects are applied on import and the imported object type remains a set of curves. 
+</p>
+<p>
+This includes any extrusions or additional scaling. For the latter case it may appear that the import did not work since the initial size is very small. Thus, the first step is to transform by scaling and rotating the objects so that they are large enough and rotated to no lie on the ground plane.
+</p>
+<table width=60%>
+<tr>
+<td><img width=100% src="2d_to_3d_images/image034.jpg">
+<td><img width=100% src="2d_to_3d_images/image035.jpg">
+</tr>
+</table>
+<p><em>Figure 16: Rotation so that SVG is not lying flat. Imported SVG remains as curves on import. Note that a separate material per curve is created on import, which differs from Maya.</em></p>
+
+<p>Next the various shape parameters can be adjusted. </p>
+<p>Here, the curves can be extruded to create a 3D object and then scaled to the desired size. As previously stated, it is imported to center the pivot (Object-&gt;Set Origin-&gt;Center of Volume), before performing any transformations otherwise the objects will scale based on the default pivot (lower left origin).</p>
+
+<table width=60%>
+<tr>
+<td><img width=100% src="2d_to_3d_images/image036.jpg">
+<td><img width=100% src="2d_to_3d_images/image037.jpg">
+</tr>
+</table>
+<p><em>Figure 17: Shape adjustment panel (left) showing appearance options including setting the amount to extrude. Scaling about pivot at center of objects (right)</em></p>
+
+<p>After setting the desired appearance and placement, the curves can be converted to be meshes for material assignment or exported for external review. Note that glTF format export is supported natively (unlike in Maya), which makes for faster review iterations for shading / materials.</p>
+
+<h3 id="shading-material-workflow">5.2 Shading / Material Workflow</h3>
+
+<p>For review within Blender, it is recommended to set the renderer to be Cycles or some other photorealistic renderer. After this is set up, values can be changed to evaluate the shading on the 3D objects. To perform proper shading evaluation shader node usage this should be enabled, and material assignments should use Principled BSDF materials.</p>
+<p><img width=50% src="2d_to_3d_images/image038.jpg"></p>
+<p><em>Figure 18: Mesh with PBR material. Adjustments can be previewed in viewport or the Preview window. Cycles has been set to be the renderer and the material set to be “pink”.</em></p>
+
+<p>With shading evaluation set up, more curve adjustment can be performed. This can optionally include beveling the edges of the logo. Note that this must be done on the original curves and as such mesh conversion should not be performed yet, or if performed to a produce a secondary instance.</p>
+
+<p><img width=50% src="2d_to_3d_images/image039.jpg"></p>
+<p><em>Figure 19: Optional bevelling to enhance the appearance of the logo.</em></p>
+
+<p>Blender has a set of preset interface arrangements which focus on different workflows. To adjust shading, “Shading” mode should be chosen which sets up the UI for shading / rendering preview and shading graph manipulation as shown below.</p>
+
+<p><img width=60% src="2d_to_3d_images/image040.jpg"></p>
+
+<p>Cycles is the default renderer used, but other renderers can be chosen (such as Eevee) for better quality feedback.</p>
+
+<p><img width=256 src="2d_to_3d_images/image041.jpg"></p>
+
+<h3 id="lighting">5.3 Lighting</h3>
+
+<p>From within the shading graph editor, environment lighting can be set up. First the shading mode needs to be set to “World” to set up shaders which affect the entire scene (or world).</p>
+<p>An environment texture node can be added, and a suitable IBL input image chosen. Connecting the node to the world output enables the environment. Disconnect the “Background node” (which provides a constant color environment) as needed.</p>
+
+<p><img width=60% src="2d_to_3d_images/image042.jpg"></p>
+<p><em>Figure 20: Environment setup with input IBL node and placement. Preview has been set to use the current renderer set (Eevee in this case)</em></p>
+
+<p>There are a number of sites to obtain free to use HDRs (CC1 licensing) from. For this scene and example from <a href="https://polyhaven.com/hdris">https://polyhaven.com/hdris</a> was used.</p>
+<p>Note that if you wish to have control over the placement of the environment a “mapping” and “texture coordinate node can be added. For example, you may wish to adjust the rotation of the environment. Switching the Shading panel to show rendered output allows for interactively preview rendering to occur.</p>
+
+<h3 id="texturing-workflow">5.4 Texturing Workflow</h3>
+<p>To fix the texture coordinates, we again take a similar approach of adding a checker texture as input color to preview.</p>
+
+<p><img width=60% src="2d_to_3d_images/image044.jpg"></p>
+<p><em>Figure 21: Checker texture assigned to base color for preview (bottom). Preview of checker (top). Shown is result after box projections have been applied.</em></p>
+
+<p>To adjust / fix the coordinates, “Edit mode” can be entered for each object and a suitable UV projection can be performed. A box projection works well in this case.</p>
+
+<p><img width=60% src="2d_to_3d_images/image045.jpg"></p>
+<p><em>Figure 22: Texture coordinates shown in the UV editor (left) and in 3D (right).</em></p>
+
+<h3 id="rendered-output">5.5 Rendered Output</h3>
+
+<p>The output settings can be specified using the &quot;Output Properties&quot; panel and rendered out. Rendering is progressive (refines over time), but an output image can be saved at any time while it refines.</p>
+
+<p><img width=60% src="2d_to_3d_images/image046.jpg"></p>
+<p><em>Figure 23: View of rendering in progress showing progress (480 samples out of total 4096) with estimated remaining time shown. For output settings a 1K square image was rendered.</em></p>
+
+<h3 id="animation-workflow-basic-turntable-setup">5.6 Animation Workflow: Basic Turntable Setup</h3>
+
+<p>If not the case, ensure that all objects for the logo to rotate are parented under a single transform. One way to do this is to create an “Empty” object. </p>
+<p>This top-level object can have animation applied to it by keying the Z-axis’s rotation angle from 0 to 360 degrees. The frame range can be set from 0 to 360 to ensure that the animation will repeat properly.</p>
+
+<p><img width=70% src="2d_to_3d_images/image047.jpg"></p>
+<p><em>Figure 24: The empty parent SCLogo’s transform has been keyframe animation such that the Z-axis goes from 0 at frame 0 to 360 degrees at frame 360.</em></p>
+
+<p>Again, a check should be made that the interpolation is linear for the animation curve to ensure constant speed. This can be done in the “Graph Editor” by selecting the curve and setting the Key-&gt;Interpolation to be linear.</p>
+
+<p><img width=90% src="2d_to_3d_images/image048.jpg"></p>
+<p><em>Figure 25: Curve of rotation in Z of logo after being linearized in the Graph Editor.</em></p>
+
+<p><img width=25% src="2d_to_3d_images/image049.gif"></p>
+<p><em>Figure 26: Animated output after exporting to glTF. Native Windows preview utility was used.</em></p>
+
+</body>
+</html>

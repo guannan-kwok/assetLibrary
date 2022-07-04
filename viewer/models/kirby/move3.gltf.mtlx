@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<materialx version="1.38">
+  <gltf_pbr name="SHADER_barrel_material" type="surfaceshader" nodedef="ND_gltf_pbr_surfaceshader">
+    <input name="base_color" type="color3" value="1, 1, 1" nodename="wood_color" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0.5" />
+    <input name="normal" type="vector3" nodename="pbr_normalmap" />
+    <input name="occlusion" type="float" value="1" />
+    <input name="transmission" type="float" value="0" />
+    <input name="specular" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="alpha" type="float" value="1" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+    <input name="sheen_color" type="color3" value="0, 0, 0" />
+    <input name="sheen_roughness" type="float" value="0" />
+    <input name="clearcoat" type="float" value="0" />
+    <input name="clearcoat_roughness" type="float" value="0" />
+    <input name="clearcoat_normal" type="vector3" />
+    <input name="emissive" type="color3" value="0, 0, 0" />
+    <input name="emissive_strength" type="float" value="1" />
+    <input name="thickness" type="float" value="0" />
+    <input name="attenuation_distance" type="float" />
+    <input name="attenuation_color" type="color3" value="1, 1, 1" />
+  </gltf_pbr>
+  <surfacematerial name="barrel_material" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHADER_barrel_material" />
+  </surfacematerial>
+  <tiledimage name="wood_color" type="color3" nodedef="ND_image_color3">
+    <input name="file" type="filename" value="move3_img1.jpg" colorspace="srgb_texture" />
+    <input name="layer" type="string" value="" />
+    <input name="default" type="color3" value="0.0, 0.0, 0.0" />
+    <input name="texcoord" type="vector2" />
+    <input name="uaddressmode" type="string" value="periodic" />
+    <input name="vaddressmode" type="string" value="periodic" />
+    <input name="filtertype" type="string" value="linear" />
+    <input name="framerange" type="string" value="" />
+    <input name="frameoffset" type="integer" value="0" />
+    <input name="frameendaction" type="string" value="constant" />
+  </tiledimage>
+  <tiledimage name="wood_normalmap" type="vector3" nodedef="ND_image_vector3">
+    <input name="file" type="filename" value="move3_img0.png" />
+    <input name="layer" type="string" value="" />
+    <input name="default" type="vector3" value="0.0, 0.0, 0.0" />
+    <input name="texcoord" type="vector2" />
+    <input name="uaddressmode" type="string" value="periodic" />
+    <input name="vaddressmode" type="string" value="periodic" />
+    <input name="filtertype" type="string" value="linear" />
+    <input name="framerange" type="string" value="" />
+    <input name="frameoffset" type="integer" value="0" />
+    <input name="frameendaction" type="string" value="constant" />
+  </tiledimage>
+  <normalmap name="pbr_normalmap" type="vector3" nodedef="ND_normalmap">
+    <input name="in" type="vector3" value="0.5, 0.5, 1.0" nodename="wood_normalmap" />
+    <input name="space" type="string" value="tangent" />
+    <input name="scale" type="float" value="1.0" />
+    <input name="normal" type="vector3" />
+    <input name="tangent" type="vector3" />
+  </normalmap>
+  <gltf_pbr name="SHADER_red_material" type="surfaceshader" nodedef="ND_gltf_pbr_surfaceshader">
+    <input name="base_color" type="color3" value="0.8, 0.00142505, 0" />
+    <input name="metallic" type="float" value="0.368182" />
+    <input name="roughness" type="float" value="0.5" />
+    <input name="normal" type="vector3" />
+    <input name="occlusion" type="float" value="1" />
+    <input name="transmission" type="float" value="0" />
+    <input name="specular" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="alpha" type="float" value="1" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+    <input name="sheen_color" type="color3" value="0, 0, 0" />
+    <input name="sheen_roughness" type="float" value="0" />
+    <input name="clearcoat" type="float" value="0" />
+    <input name="clearcoat_roughness" type="float" value="0" />
+    <input name="clearcoat_normal" type="vector3" />
+    <input name="emissive" type="color3" value="0, 0, 0" />
+    <input name="emissive_strength" type="float" value="1" />
+    <input name="thickness" type="float" value="0" />
+    <input name="attenuation_distance" type="float" />
+    <input name="attenuation_color" type="color3" value="1, 1, 1" />
+  </gltf_pbr>
+  <surfacematerial name="red_material" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHADER_red_material" />
+  </surfacematerial>
+  <gltf_pbr name="SHADER_rim_material" type="surfaceshader" nodedef="ND_gltf_pbr_surfaceshader">
+    <input name="base_color" type="color3" value="0.525509, 0.8, 0.687613" />
+    <input name="metallic" type="float" value="0.340909" />
+    <input name="roughness" type="float" value="0.168182" />
+    <input name="normal" type="vector3" />
+    <input name="occlusion" type="float" value="1" />
+    <input name="transmission" type="float" value="0" />
+    <input name="specular" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="alpha" type="float" value="1" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+    <input name="sheen_color" type="color3" value="0, 0, 0" />
+    <input name="sheen_roughness" type="float" value="0" />
+    <input name="clearcoat" type="float" value="0" />
+    <input name="clearcoat_roughness" type="float" value="0" />
+    <input name="clearcoat_normal" type="vector3" />
+    <input name="emissive" type="color3" value="0, 0, 0" />
+    <input name="emissive_strength" type="float" value="1" />
+    <input name="thickness" type="float" value="0" />
+    <input name="attenuation_distance" type="float" />
+    <input name="attenuation_color" type="color3" value="1, 1, 1" />
+  </gltf_pbr>
+  <surfacematerial name="rim_material" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHADER_rim_material" />
+  </surfacematerial>
+  <gltf_pbr name="SHADER_stars_material" type="surfaceshader" nodedef="ND_gltf_pbr_surfaceshader">
+    <input name="base_color" type="color3" value="0.8, 0.610954, 0" />
+    <input name="metallic" type="float" value="0.770455" />
+    <input name="roughness" type="float" value="0.261364" />
+    <input name="normal" type="vector3" />
+    <input name="occlusion" type="float" value="1" />
+    <input name="transmission" type="float" value="0" />
+    <input name="specular" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="alpha" type="float" value="1" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+    <input name="sheen_color" type="color3" value="0, 0, 0" />
+    <input name="sheen_roughness" type="float" value="0" />
+    <input name="clearcoat" type="float" value="0" />
+    <input name="clearcoat_roughness" type="float" value="0" />
+    <input name="clearcoat_normal" type="vector3" />
+    <input name="emissive" type="color3" value="0, 0, 0" />
+    <input name="emissive_strength" type="float" value="1" />
+    <input name="thickness" type="float" value="0" />
+    <input name="attenuation_distance" type="float" />
+    <input name="attenuation_color" type="color3" value="1, 1, 1" />
+  </gltf_pbr>
+  <surfacematerial name="stars_material" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHADER_stars_material" />
+  </surfacematerial>
+  <look name="look_move3">
+    <materialassign name="materialassign1" material="barrel_material" geom="/Kirby_Hammer/hammer_barrel/hammer_barrel, /Kirby_Hammer/hammer_handle/hammer_handle" />
+    <materialassign name="materialassign2" material="red_material" geom="/Kirby_Hammer/hammer_red_ends/hammer_red_ends" />
+    <materialassign name="materialassign3" material="rim_material" geom="/Kirby_Hammer/hammer_rims/hammer_rims" />
+    <materialassign name="materialassign4" material="stars_material" geom="/Kirby_Hammer/hammer_stars/hammer_stars" />
+  </look>
+</materialx>

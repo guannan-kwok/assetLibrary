@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<materialx version="1.38">
+  <gltf_pbr name="SHADER_kirby_sword_blade" type="surfaceshader" nodedef="ND_gltf_pbr_surfaceshader">
+    <input name="base_color" type="color3" value="0.8, 0.8, 0.8" />
+    <input name="metallic" type="float" value="1" />
+    <input name="roughness" type="float" value="0.00937501" />
+    <input name="normal" type="vector3" />
+    <input name="occlusion" type="float" value="1" />
+    <input name="transmission" type="float" value="0" />
+    <input name="specular" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="alpha" type="float" value="1" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+    <input name="sheen_color" type="color3" value="0, 0, 0" />
+    <input name="sheen_roughness" type="float" value="0" />
+    <input name="clearcoat" type="float" value="0" />
+    <input name="clearcoat_roughness" type="float" value="0" />
+    <input name="clearcoat_normal" type="vector3" />
+    <input name="emissive" type="color3" value="0, 0, 0" />
+    <input name="emissive_strength" type="float" value="1" />
+    <input name="thickness" type="float" value="0" />
+    <input name="attenuation_distance" type="float" />
+    <input name="attenuation_color" type="color3" value="1, 1, 1" />
+  </gltf_pbr>
+  <surfacematerial name="kirby_sword_blade" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHADER_kirby_sword_blade" />
+  </surfacematerial>
+  <gltf_pbr name="SHADER_kirby_sword_gold" type="surfaceshader" nodedef="ND_gltf_pbr_surfaceshader">
+    <input name="base_color" type="color3" value="0.8, 0.425289, 0.0370648" />
+    <input name="metallic" type="float" value="0.921875" />
+    <input name="roughness" type="float" value="0.09375" />
+    <input name="normal" type="vector3" />
+    <input name="occlusion" type="float" value="1" />
+    <input name="transmission" type="float" value="0" />
+    <input name="specular" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="alpha" type="float" value="1" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+    <input name="sheen_color" type="color3" value="0, 0, 0" />
+    <input name="sheen_roughness" type="float" value="0" />
+    <input name="clearcoat" type="float" value="0" />
+    <input name="clearcoat_roughness" type="float" value="0" />
+    <input name="clearcoat_normal" type="vector3" />
+    <input name="emissive" type="color3" value="0, 0, 0" />
+    <input name="emissive_strength" type="float" value="1" />
+    <input name="thickness" type="float" value="0" />
+    <input name="attenuation_distance" type="float" />
+    <input name="attenuation_color" type="color3" value="1, 1, 1" />
+  </gltf_pbr>
+  <surfacematerial name="kirby_sword_gold" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHADER_kirby_sword_gold" />
+  </surfacematerial>
+  <gltf_pbr name="SHADER_kirby_sword_handle" type="surfaceshader" nodedef="ND_gltf_pbr_surfaceshader">
+    <input name="base_color" type="color3" value="0, 0.0105383, 0.791298" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0.35" />
+    <input name="normal" type="vector3" />
+    <input name="occlusion" type="float" value="1" />
+    <input name="transmission" type="float" value="0" />
+    <input name="specular" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="alpha" type="float" value="1" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+    <input name="sheen_color" type="color3" value="0, 0, 0" />
+    <input name="sheen_roughness" type="float" value="0" />
+    <input name="clearcoat" type="float" value="0" />
+    <input name="clearcoat_roughness" type="float" value="0" />
+    <input name="clearcoat_normal" type="vector3" />
+    <input name="emissive" type="color3" value="0, 0, 0" />
+    <input name="emissive_strength" type="float" value="1" />
+    <input name="thickness" type="float" value="0" />
+    <input name="attenuation_distance" type="float" />
+    <input name="attenuation_color" type="color3" value="1, 1, 1" />
+  </gltf_pbr>
+  <surfacematerial name="kirby_sword_handle" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHADER_kirby_sword_handle" />
+  </surfacematerial>
+  <look name="look_move2">
+    <materialassign name="materialassign1" material="kirby_sword_blade" geom="/kirby_sword_blade/kirby_sword_blade" />
+    <materialassign name="materialassign2" material="kirby_sword_gold" geom="/kirby_sword_gold/kirby_sword_gold" />
+    <materialassign name="materialassign3" material="kirby_sword_handle" geom="/kirby_sword_andle/kirby_sword_handle" />
+  </look>
+</materialx>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!-- <link rel="stylesheet" href="css/main.css"> -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+
+  <title>Digital Card Viewer</title>
+  <link rel="icon" type="image/x-icon" href="public/favicon.ico" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif
+    }
+
+    #gui {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .container {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .canvas-container {
+      position: relative;
+      max-width: 1120px;
+      min-width: 760px;
+      margin: 0 auto;
+    }
+
+    #background {
+      padding-left: 0px;
+      font-family: sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      background-color: none;
+      border: none;
+      z-index: 0;
+    }
+
+    #character_viewport {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      z-index: 2;
+    }
+
+    #hud {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+  </style>
+<script defer src="main.js"></script></head>
+
+<body>
+  <!-- style="margin: 0px; overflow: hidden;">-->
+
+  <!-- data-char_uri="standard/shaderball.glb",
+  data-char_material_uri="standard/standard_surface_look_brass_tiled.mtlx", -->
+  
+  <div id="character_info"
+    style="display: none",
+    data-card_background="images/kirby/card_v1.svg",
+    data-hp="images/kirby/HP.svg",
+    data-hp_tooltip="images/kirby/HP_tooltip.svg",
+    data-character="images/kirby/character.png",
+    data-character_background="images/kirby/character_background.png",
+    data-supermove="images/kirby/super_move.svg",
+    data-supermove_tooltip="images/kirby/super_move_tooltip.svg",
+    data-energy="images/kirby/energy.svg",
+    data-energy_tooltip="images/kirby/energy_tooltip.svg",    
+    data-char_name="Kirby",
+    data-image_path="images/kirby",
+    data-icon_path="icons/kirby",
+    data-char_uri="kirby/character.glb",
+    data-char_material_uri="kirby/character.gltf.mtlx",
+    data-prop_uri1="",
+    data-prop_material_uri1="",
+    data-prop_ui1="icons/kirby/move1.svg",
+    data-prop_ui1_desc="images/kirby/move1_description.svg",
+    data-prop_uri2="kirby/move2.glb",
+    data-prop_material_uri2="kirby/move2.gltf.mtlx",
+    data-prop_ui2="icons/kirby/move2.svg",
+    data-prop_ui2_desc="images/kirby/move2_description.svg",
+    data-prop_uri3="kirby/move3.glb",
+    data-prop_material_uri3="kirby/move3.gltf.mtlx",
+    data-prop_ui3="icons/kirby/move3.svg",
+    data-prop_ui3_desc="images/kirby/move3_description.svg",
+    data-char_2dimage="images/kirby/character.png",
+    data-char_2dturntable="images/kirby/character_turntable.gif">
+  </div>
+
+  <section>
+    <div class="container">
+
+      <div class="canvas-container">
+
+        <!-- Main card background -->
+        <canvas id="background" style="width: 760px; height: 1120px;" width="760" height="1120">
+        </canvas>
+        <img id="card_background" src="" width="760" height="1120" 
+                          style="position: absolute; 
+                                  width: 760px;
+                                  height: 1120px;
+                                  left: 0px; 
+                                  top: 0px;
+                                  z-index: 1;
+                           " />
+
+        <!-- HP -->
+        <img id="hp_tooltip" src="" style="position: absolute; 
+                  width: 256px;
+                  left: 480px; 
+                  top: 120px;
+                  display: none;
+                  z-index: 4;"/>
+
+        <img id="hp" src="" style="position: absolute; 
+                  left: 560px; 
+                  top: 70px;
+                  z-index: 3;" data-tooltip="HP" />
+                           
+        <!-- Show either a 2D static iamge or 3d dynamic view based on toggle -->
+        <img id="character_background" src="" 
+                        style="position: absolute;
+                              width: 400px;
+                              height: 370px; 
+                              left: 180px; 
+                              top: 150px;
+                              display: block;
+                              border: 0px solid #555;
+                              z-index: 2;" data-tooltip="Background for character image" />
+        <img id="character" src="" 
+                        style="position: absolute;
+                              width: 400px;
+                              height: 370px; 
+                              left: 180px; 
+                              top: 150px;
+                              display: block;
+                              border: 0px solid #555;
+                              z-index: 2;" data-tooltip="2d image of the character" />
+
+        <!-- 3D character viewport -->
+        <canvas id="character_viewport" style="width: 760px; 
+                                        height:1120px;
+                                        display: none" width="760" height="1120";
+                                        data-tooltip2="3D rendering of character"></canvas>
+
+        <!-- Viewing buttons -->
+        <img id="2d3dButton" src="icons/2d_3d_switch.svg" style="position: absolute; 
+                              left: 300px; 
+                              top: 460px;
+                              border-radius: 50%;
+                              z-index: 3;" data-tooltip="Switch between 2d and 3d view of the character" />
+        <img id="backgroundButton" src="icons/background_switch.svg" style="position: absolute; 
+                      left: 360px; 
+                      top: 460px;
+                      z-index: 3;" data-tooltip="Toggle displaying the background behind the character" />
+        <img id="playButton" src="icons/play.svg" style="position: absolute; 
+                      left: 420px; 
+                      top: 460px;
+                      z-index: 3;" data-tooltip="Toggle turntable display for the character" />
+
+        <!-- Move buttons -->
+        <img id="move1" src="" style="position: absolute; 
+                                      left: 180px; 
+                                      top: 538px;
+                                      z-index: 3;" data-tooltip="Switch to default move" />
+        <img id="move1_desc" src="" style="position: absolute; 
+                                      left: 65px; 
+                                      top: 755px;
+                                      display: block;
+                                      z-index: 3;" data-tooltip="Current active move" />
+
+        <img id="move2" src="" style="position: absolute; 
+                                      left: 360px; 
+                                      top: 538px;
+                                      z-index: 4;" data-tooltip="Switch to first move" />
+        <img id="move2_desc" src="" style="position: absolute; 
+                                      left: 65px; 
+                                      top: 755px;
+                                      display: none;
+                                      z-index: 3;" data-tooltip="Current active move" />
+
+        <img id="move3" src="" style="position: absolute; 
+                                                      left: 540px; 
+                                                      top: 538px;
+                                                      z-index: 3;" 
+                                                      data-tooltip="Switch to third move" />
+        <img id="move3_desc" src="" style="position: absolute; 
+                                      left: 65px; 
+                                      top: 755px;
+                                      display: none;
+                                      z-index: 3;" data-tooltip="Current active move" />
+
+        <!-- Super Move -->
+        <img id="supermove_tooltip" src="" style="position: absolute; 
+                  width: 256px;
+                  left: 400px; 
+                  top: 600px;
+                  display: none;
+                  z-index: 4;"/>
+        <img id="supermove" src="" style="position: absolute; 
+                                                      left: 65px; 
+                                                      top: 690px;
+                                                      z-index: 3;" 
+                                                      data-tooltip="Super move" />
+        <!-- Active move -->                                                      
+        <img id="energy_tooltip" src="" style="position: absolute; 
+                  width: 256px;
+                  left: 480px; 
+                  bottom: 250px;
+                  display: none;
+                  z-index: 4;"/>
+
+        <img id="energy" src="" style="position: absolute; 
+                  left: 580px; 
+                  bottom: 180px;
+                  z-index: 3;" data-tooltip="Retreat cost" />
+
+      </div>
+      <div id="controls" style="position: absolute;
+            left: 800px;
+            top: 0px;">
+      </div>
+
+    </div>
+    </div>
+  </section>
+  <script src="JsMaterialXGenShader.js"></script>  
+  <script src="main.js"></script>
+</body>
+
+</html>

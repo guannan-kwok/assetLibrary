@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<materialx version="1.38">
+  <gltf_pbr name="SHADER_Black_shader" type="surfaceshader" nodedef="ND_gltf_pbr_surfaceshader">
+    <input name="base_color" type="color3" value="0.0196412, 0.0196412, 0.0196412" />
+    <input name="metallic" type="float" value="0.411364" />
+    <input name="roughness" type="float" value="0.5" />
+    <input name="normal" type="vector3" />
+    <input name="occlusion" type="float" value="1" />
+    <input name="transmission" type="float" value="0" />
+    <input name="specular" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="alpha" type="float" value="1" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+    <input name="sheen_color" type="color3" value="0, 0, 0" />
+    <input name="sheen_roughness" type="float" value="0" />
+    <input name="clearcoat" type="float" value="0" />
+    <input name="clearcoat_roughness" type="float" value="0" />
+    <input name="clearcoat_normal" type="vector3" />
+    <input name="emissive" type="color3" value="0, 0, 0" />
+    <input name="emissive_strength" type="float" value="1" />
+    <input name="thickness" type="float" value="0" />
+    <input name="attenuation_distance" type="float" />
+    <input name="attenuation_color" type="color3" value="1, 1, 1" />
+  </gltf_pbr>
+  <surfacematerial name="Black_shader" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHADER_Black_shader" />
+  </surfacematerial>
+  <gltf_pbr name="SHADER_gold_shader" type="surfaceshader" nodedef="ND_gltf_pbr_surfaceshader">
+    <input name="base_color" type="color3" value="0.8, 0.283763, 0" />
+    <input name="metallic" type="float" value="1" />
+    <input name="roughness" type="float" value="0.120455" />
+    <input name="normal" type="vector3" />
+    <input name="occlusion" type="float" value="1" />
+    <input name="transmission" type="float" value="0" />
+    <input name="specular" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="alpha" type="float" value="1" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+    <input name="sheen_color" type="color3" value="0, 0, 0" />
+    <input name="sheen_roughness" type="float" value="0" />
+    <input name="clearcoat" type="float" value="0.25" />
+    <input name="clearcoat_roughness" type="float" value="0.109545" />
+    <input name="clearcoat_normal" type="vector3" />
+    <input name="emissive" type="color3" value="0, 0, 0" />
+    <input name="emissive_strength" type="float" value="1" />
+    <input name="thickness" type="float" value="0" />
+    <input name="attenuation_distance" type="float" />
+    <input name="attenuation_color" type="color3" value="1, 1, 1" />
+  </gltf_pbr>
+  <surfacematerial name="gold_shader" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHADER_gold_shader" />
+  </surfacematerial>
+  <gltf_pbr name="SHADER_Red_SHader" type="surfaceshader" nodedef="ND_gltf_pbr_surfaceshader">
+    <input name="base_color" type="color3" value="0.879623, 0.3564, 0.436906" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0.5" />
+    <input name="normal" type="vector3" />
+    <input name="occlusion" type="float" value="1" />
+    <input name="transmission" type="float" value="0" />
+    <input name="specular" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="alpha" type="float" value="1" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+    <input name="sheen_color" type="color3" value="0, 0, 0" />
+    <input name="sheen_roughness" type="float" value="0" />
+    <input name="clearcoat" type="float" value="0" />
+    <input name="clearcoat_roughness" type="float" value="0" />
+    <input name="clearcoat_normal" type="vector3" />
+    <input name="emissive" type="color3" value="0, 0, 0" />
+    <input name="emissive_strength" type="float" value="1" />
+    <input name="thickness" type="float" value="0" />
+    <input name="attenuation_distance" type="float" />
+    <input name="attenuation_color" type="color3" value="1, 1, 1" />
+  </gltf_pbr>
+  <surfacematerial name="Red_SHader" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHADER_Red_SHader" />
+  </surfacematerial>
+  <gltf_pbr name="SHADER_Feet_Shader" type="surfaceshader" nodedef="ND_gltf_pbr_surfaceshader">
+    <input name="base_color" type="color3" value="0.127296, 0, 0.00708508" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0.5" />
+    <input name="normal" type="vector3" />
+    <input name="occlusion" type="float" value="1" />
+    <input name="transmission" type="float" value="0" />
+    <input name="specular" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="alpha" type="float" value="1" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+    <input name="sheen_color" type="color3" value="0, 0, 0" />
+    <input name="sheen_roughness" type="float" value="0" />
+    <input name="clearcoat" type="float" value="0" />
+    <input name="clearcoat_roughness" type="float" value="0" />
+    <input name="clearcoat_normal" type="vector3" />
+    <input name="emissive" type="color3" value="0, 0, 0" />
+    <input name="emissive_strength" type="float" value="1" />
+    <input name="thickness" type="float" value="0" />
+    <input name="attenuation_distance" type="float" />
+    <input name="attenuation_color" type="color3" value="1, 1, 1" />
+  </gltf_pbr>
+  <surfacematerial name="Feet_Shader" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHADER_Feet_Shader" />
+  </surfacematerial>
+  <gltf_pbr name="SHADER_Head_Shader" type="surfaceshader" nodedef="ND_gltf_pbr_surfaceshader">
+    <input name="base_color" type="color3" value="1, 1, 1" nodename="face" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0.597727" />
+    <input name="normal" type="vector3" />
+    <input name="occlusion" type="float" value="1" />
+    <input name="transmission" type="float" value="0" />
+    <input name="specular" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="alpha" type="float" value="1" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+    <input name="sheen_color" type="color3" value="0, 0, 0" />
+    <input name="sheen_roughness" type="float" value="0" />
+    <input name="clearcoat" type="float" value="0" />
+    <input name="clearcoat_roughness" type="float" value="0" />
+    <input name="clearcoat_normal" type="vector3" />
+    <input name="emissive" type="color3" value="0, 0, 0" />
+    <input name="emissive_strength" type="float" value="1" />
+    <input name="thickness" type="float" value="0" />
+    <input name="attenuation_distance" type="float" />
+    <input name="attenuation_color" type="color3" value="1, 1, 1" />
+  </gltf_pbr>
+  <surfacematerial name="Head_Shader" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHADER_Head_Shader" />
+  </surfacematerial>
+  <tiledimage name="face" type="color3" nodedef="ND_image_color3">
+    <input name="file" type="filename" value="character_img0.png" colorspace="srgb_texture" />
+    <input name="layer" type="string" value="" />
+    <input name="default" type="color3" value="0.0, 0.0, 0.0" />
+    <input name="texcoord" type="vector2" />
+    <input name="uaddressmode" type="string" value="periodic" />
+    <input name="vaddressmode" type="string" value="periodic" />
+    <input name="filtertype" type="string" value="linear" />
+    <input name="framerange" type="string" value="" />
+    <input name="frameoffset" type="integer" value="0" />
+    <input name="frameendaction" type="string" value="constant" />
+  </tiledimage>
+  <look name="look1">
+    <materialassign name="materialassign1" material="Red_SHader" geom="/kirby_arms2/kirby_arms2" />
+    <materialassign name="materialassign2" material="Black_shader" geom="/kirby_black_stand/kirby_black_stand" />
+    <materialassign name="materialassign3" material="Head_Shader" geom="/kirby_head2/kirby_head2" />
+    <materialassign name="materialassign4" material="gold_shader" geom="/kirby_gold_stand/kirby_gold_stand" />
+    <materialassign name="materialassign5" material="Feet_Shader" geom="/kirby_feet2/kirby_feet2" />
+  </look>
+</materialx>

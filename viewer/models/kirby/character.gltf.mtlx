@@ -136,7 +136,7 @@
     <input name="surfaceshader" type="surfaceshader" nodename="SHADER_Head_Shader" />
   </surfacematerial>
   <tiledimage name="face" type="color3" nodedef="ND_image_color3">
-    <input name="file" type="filename" value="character_img0.png" colorspace="srgb_texture" />
+    <input name="file" type="filename" value="viewer/character_img0.png" colorspace="srgb_texture" />
     <input name="layer" type="string" value="" />
     <input name="default" type="color3" value="0.0, 0.0, 0.0" />
     <input name="texcoord" type="vector2" />

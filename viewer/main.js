@@ -58045,7 +58045,7 @@ class MaterialXRenderer
         // location.
         const paths = materialFilename.split('/');
         paths.pop(); 
-        const searchPath = paths.join('/');
+        let searchPath = "viewer/" + paths.join('/');
 
         // Merge all documents with materials
         for (let materialString of materialStrings)

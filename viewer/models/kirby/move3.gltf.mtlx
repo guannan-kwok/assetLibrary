@@ -40,7 +40,7 @@
     <input name="frameendaction" type="string" value="constant" />
   </tiledimage>
   <tiledimage name="wood_normalmap" type="vector3" nodedef="ND_image_vector3">
-    <input name="file" type="filename" value="viewer/move3_img0.png" />
+    <input name="file" type="filename" value="move3_img0.png" />
     <input name="layer" type="string" value="" />
     <input name="default" type="vector3" value="0.0, 0.0, 0.0" />
     <input name="texcoord" type="vector2" />

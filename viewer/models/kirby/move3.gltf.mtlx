@@ -28,7 +28,7 @@
     <input name="surfaceshader" type="surfaceshader" nodename="SHADER_barrel_material" />
   </surfacematerial>
   <tiledimage name="wood_color" type="color3" nodedef="ND_image_color3">
-    <input name="file" type="filename" value="viewer/move3_img1.jpg" colorspace="srgb_texture" />
+    <input name="file" type="filename" value="move3_img1.jpg" colorspace="srgb_texture" />
     <input name="layer" type="string" value="" />
     <input name="default" type="color3" value="0.0, 0.0, 0.0" />
     <input name="texcoord" type="vector2" />

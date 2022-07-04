@@ -62218,13 +62218,13 @@ function loadScene(remderer, scene, characterInfo, camera)
     environments = new _environment_js__WEBPACK_IMPORTED_MODULE_7__.Environments();
     if (useMaterialXMaterials)
     { 
-        radianceFile = environments.addRadianceEnvironment('../lights/', 'goegap_split.hdr');
+        radianceFile = environments.addRadianceEnvironment('lights/', 'goegap_split.hdr');
     }
     else
     {
-        radianceFile = environments.addRadianceEnvironment('../lights/', 'goegap.hdr');
+        radianceFile = environments.addRadianceEnvironment('lights/', 'goegap.hdr');
     }
-    var irradianceFile = environments.addIrradianceEnvironment('../lights/', 'irradiance/goegap_split.hdr');
+    var irradianceFile = environments.addIrradianceEnvironment('lights/', 'irradiance/goegap_split.hdr');
     var directLightingFile = "lights/goegap_split.mtlx";
     theScene.setEnvironments(environments);    
 

@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<materialx version="1.38">
+  <gltf_pbr name="SHADER_bottom_hat_shader" type="surfaceshader" nodedef="ND_gltf_pbr_surfaceshader">
+    <input name="base_color" type="color3" value="0.8, 0.738424, 0" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0.485782" />
+    <input name="normal" type="vector3" nodename="pbr_normalmap" />
+    <input name="occlusion" type="float" value="1" />
+    <input name="transmission" type="float" value="0.4" />
+    <input name="specular" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="alpha" type="float" value="1" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+    <input name="sheen_color" type="color3" value="0, 0, 0" />
+    <input name="sheen_roughness" type="float" value="0" />
+    <input name="clearcoat" type="float" value="0" />
+    <input name="clearcoat_roughness" type="float" value="0" />
+    <input name="clearcoat_normal" type="vector3" />
+    <input name="emissive" type="color3" value="0, 0, 0" />
+    <input name="emissive_strength" type="float" value="1" />
+    <input name="thickness" type="float" value="0" />
+    <input name="attenuation_distance" type="float" />
+    <input name="attenuation_color" type="color3" value="1, 1, 1" />
+  </gltf_pbr>
+  <surfacematerial name="bottom_hat_shader" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHADER_bottom_hat_shader" />
+  </surfacematerial>
+  <tiledimage name="bottom_hat_normal" type="vector3" nodedef="ND_image_vector3">
+    <input name="file" type="filename" value="kirby_hat_img0.png" />
+    <input name="layer" type="string" value="" />
+    <input name="default" type="vector3" value="0.0, 0.0, 0.0" />
+    <input name="texcoord" type="vector2" />
+    <input name="uaddressmode" type="string" value="periodic" />
+    <input name="vaddressmode" type="string" value="periodic" />
+    <input name="filtertype" type="string" value="linear" />
+    <input name="framerange" type="string" value="" />
+    <input name="frameoffset" type="integer" value="0" />
+    <input name="frameendaction" type="string" value="constant" />
+  </tiledimage>
+  <normalmap name="pbr_normalmap" type="vector3" nodedef="ND_normalmap">
+    <input name="in" type="vector3" value="0.5, 0.5, 1.0" nodename="bottom_hat_normal" />
+    <input name="space" type="string" value="tangent" />
+    <input name="scale" type="float" value="1.0" />
+    <input name="normal" type="vector3" />
+    <input name="tangent" type="vector3" />
+  </normalmap>
+  <gltf_pbr name="SHADER_hat_top_shader" type="surfaceshader" nodedef="ND_gltf_pbr_surfaceshader">
+    <input name="base_color" type="color3" value="0.00453593, 0.8, 0" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0.507109" />
+    <input name="normal" type="vector3" nodename="pbr_normalmap2" />
+    <input name="occlusion" type="float" value="1" />
+    <input name="transmission" type="float" value="0.419431" />
+    <input name="specular" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="alpha" type="float" value="1" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+    <input name="sheen_color" type="color3" value="0, 0, 0" />
+    <input name="sheen_roughness" type="float" value="0" />
+    <input name="clearcoat" type="float" value="0" />
+    <input name="clearcoat_roughness" type="float" value="0" />
+    <input name="clearcoat_normal" type="vector3" />
+    <input name="emissive" type="color3" value="0, 0, 0" />
+    <input name="emissive_strength" type="float" value="1" />
+    <input name="thickness" type="float" value="0" />
+    <input name="attenuation_distance" type="float" />
+    <input name="attenuation_color" type="color3" value="1, 1, 1" />
+  </gltf_pbr>
+  <surfacematerial name="hat_top_shader" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHADER_hat_top_shader" />
+  </surfacematerial>
+  <tiledimage name="top_hat_normal" type="vector3" nodedef="ND_image_vector3">
+    <input name="file" type="filename" value="kirby_hat_img1.png" />
+    <input name="layer" type="string" value="" />
+    <input name="default" type="vector3" value="0.0, 0.0, 0.0" />
+    <input name="texcoord" type="vector2" />
+    <input name="uaddressmode" type="string" value="periodic" />
+    <input name="vaddressmode" type="string" value="periodic" />
+    <input name="filtertype" type="string" value="linear" />
+    <input name="framerange" type="string" value="" />
+    <input name="frameoffset" type="integer" value="0" />
+    <input name="frameendaction" type="string" value="constant" />
+  </tiledimage>
+  <normalmap name="pbr_normalmap2" type="vector3" nodedef="ND_normalmap">
+    <input name="in" type="vector3" value="0.5, 0.5, 1.0" nodename="top_hat_normal" />
+    <input name="space" type="string" value="tangent" />
+    <input name="scale" type="float" value="1.0" />
+    <input name="normal" type="vector3" />
+    <input name="tangent" type="vector3" />
+  </normalmap>
+  <gltf_pbr name="SHADER_Default_OBJ_002" type="surfaceshader" nodedef="ND_gltf_pbr_surfaceshader">
+    <input name="base_color" type="color3" value="0.8, 0.674829, 0.425026" />
+    <input name="metallic" type="float" value="0.2109" />
+    <input name="roughness" type="float" value="0.5" />
+    <input name="normal" type="vector3" />
+    <input name="occlusion" type="float" value="1" />
+    <input name="transmission" type="float" value="0" />
+    <input name="specular" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="alpha" type="float" value="1" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+    <input name="sheen_color" type="color3" value="0, 0, 0" />
+    <input name="sheen_roughness" type="float" value="0" />
+    <input name="clearcoat" type="float" value="0" />
+    <input name="clearcoat_roughness" type="float" value="0" />
+    <input name="clearcoat_normal" type="vector3" />
+    <input name="emissive" type="color3" value="0, 0, 0" />
+    <input name="emissive_strength" type="float" value="1" />
+    <input name="thickness" type="float" value="0" />
+    <input name="attenuation_distance" type="float" />
+    <input name="attenuation_color" type="color3" value="1, 1, 1" />
+  </gltf_pbr>
+  <surfacematerial name="Default_OBJ_002" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHADER_Default_OBJ_002" />
+  </surfacematerial>
+  <look name="look1">
+    <materialassign name="materialassign1" material="bottom_hat_shader" geom="/hat_bottom/hat_bottom" />
+    <materialassign name="materialassign2" material="hat_top_shader" geom="/hat_top/hat_top" />
+    <materialassign name="materialassign3" material="Default_OBJ_002" geom="/hat_ball/hat_ball" />
+  </look>
+</materialx>

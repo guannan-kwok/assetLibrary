@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<materialx version="1.38">
+  <gltf_pbr name="SHADER_table_body_material" type="surfaceshader" nodedef="ND_gltf_pbr_surfaceshader">
+    <input name="base_color" type="color3" value="0.716787, 0.716787, 0.716787" />
+    <input name="metallic" type="float" value="0.689" />
+    <input name="roughness" type="float" value="0.08" />
+    <input name="normal" type="vector3" />
+    <input name="occlusion" type="float" value="1" />
+    <input name="transmission" type="float" value="0" />
+    <input name="specular" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="alpha" type="float" value="1" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+    <input name="sheen_color" type="color3" value="0, 0, 0" />
+    <input name="sheen_roughness" type="float" value="0" />
+    <input name="clearcoat" type="float" value="0" />
+    <input name="clearcoat_roughness" type="float" value="0" />
+    <input name="clearcoat_normal" type="vector3" />
+    <input name="emissive" type="color3" value="0, 0, 0" />
+    <input name="emissive_strength" type="float" value="1" />
+    <input name="thickness" type="float" value="0" />
+    <input name="attenuation_distance" type="float" />
+    <input name="attenuation_color" type="color3" value="1, 1, 1" />
+  </gltf_pbr>
+  <surfacematerial name="table_body_material" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHADER_table_body_material" />
+  </surfacematerial>
+  <gltf_pbr name="SHADER_wood" type="surfaceshader" nodedef="ND_gltf_pbr_surfaceshader">
+    <input name="base_color" type="color3" value="1, 1, 1" nodename="wood_color" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0.08" />
+    <input name="normal" type="vector3" />
+    <input name="occlusion" type="float" value="1" />
+    <input name="transmission" type="float" value="0" />
+    <input name="specular" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="alpha" type="float" value="1" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+    <input name="sheen_color" type="color3" value="0, 0, 0" />
+    <input name="sheen_roughness" type="float" value="0" />
+    <input name="clearcoat" type="float" value="0" />
+    <input name="clearcoat_roughness" type="float" value="0" />
+    <input name="clearcoat_normal" type="vector3" />
+    <input name="emissive" type="color3" value="0, 0, 0" />
+    <input name="emissive_strength" type="float" value="1" />
+    <input name="thickness" type="float" value="0" />
+    <input name="attenuation_distance" type="float" />
+    <input name="attenuation_color" type="color3" value="1, 1, 1" />
+  </gltf_pbr>
+  <surfacematerial name="wood" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHADER_wood" />
+  </surfacematerial>
+  <tiledimage name="wood_color" type="color3" nodedef="ND_image_color3">
+    <input name="file" type="filename" value="table_img0.jpg" colorspace="srgb_texture" />
+    <input name="layer" type="string" value="" />
+    <input name="default" type="color3" value="0.0, 0.0, 0.0" />
+    <input name="texcoord" type="vector2" />
+    <input name="uaddressmode" type="string" value="periodic" />
+    <input name="vaddressmode" type="string" value="periodic" />
+    <input name="filtertype" type="string" value="linear" />
+    <input name="framerange" type="string" value="" />
+    <input name="frameoffset" type="integer" value="0" />
+    <input name="frameendaction" type="string" value="constant" />
+  </tiledimage>
+  <gltf_pbr name="SHADER_knob_material" type="surfaceshader" nodedef="ND_gltf_pbr_surfaceshader">
+    <input name="base_color" type="color3" value="0.931, 0.706, 0.361" />
+    <input name="metallic" type="float" value="0.599" />
+    <input name="roughness" type="float" value="0.4" />
+    <input name="normal" type="vector3" />
+    <input name="occlusion" type="float" value="1" />
+    <input name="transmission" type="float" value="0" />
+    <input name="specular" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="alpha" type="float" value="1" />
+    <input name="alpha_mode" type="integer" value="0" />
+    <input name="alpha_cutoff" type="float" value="0.5" />
+    <input name="sheen_color" type="color3" value="0, 0, 0" />
+    <input name="sheen_roughness" type="float" value="0" />
+    <input name="clearcoat" type="float" value="0" />
+    <input name="clearcoat_roughness" type="float" value="0" />
+    <input name="clearcoat_normal" type="vector3" />
+    <input name="emissive" type="color3" value="0, 0, 0" />
+    <input name="emissive_strength" type="float" value="1" />
+    <input name="thickness" type="float" value="0" />
+    <input name="attenuation_distance" type="float" />
+    <input name="attenuation_color" type="color3" value="1, 1, 1" />
+  </gltf_pbr>
+  <surfacematerial name="knob_material" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHADER_knob_material" />
+  </surfacematerial>
+  <look name="look1">
+    <materialassign name="materialassign1" material="table_body_material" geom="/right_drawer_front/right_drawer_front_mesh, /table_top/table_top_mesh, /left_drawer_front/left_draw_front_mesh" />
+    <materialassign name="materialassign2" material="wood" geom="/left_drawer_back/left_drawer_back_mesh, /left_back_leg/legt_back_leg_mesh, /left_front_leg/left_front_leg_mesh, /right_front_leg/right_front_leg_mesh, /right_back_leg/right_back_leg_mesh, /right_drawer_back/right_draw_back_mesh" />
+    <materialassign name="materialassign3" material="knob_material" geom="/knob_left/knob_left_mesh, / knob_right/knob_right_mesh" />
+  </look>
+</materialx>

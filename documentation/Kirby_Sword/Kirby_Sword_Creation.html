@@ -1,0 +1,102 @@
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  
+    <!-- Css stylesheet-->
+    <link rel="stylesheet" href="../../css/style.css">
+  
+    <!-- Google fonts/icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  
+  </head>
+
+<body class="homepage spacing">
+<h1 id="asset-creation-case-study-sword">Asset Creation Case Study: Sword</h1>
+<a href="../../index.html"><href><h4>Back to Homepage</h4></a>
+
+<h2 id="introduction">Introduction</h2>
+<p>The sword asset was inspired 
+by game illustrations of the classic sword ability first 
+introduced in 1993 for 
+<a href="https://en.wikipedia.org/wiki/Kirby%27s_Adventure">Kirby’s Adventure.</a></p>
+
+<h2 id="modelling-maya">Modelling: Maya</h2>
+<p>The base model was created in Maya.</p>
+<p>3D geometry was created based on reference illustrations which were loaded in as 2D image planes.</p>
+<p>The sword is comprised of three separate objects: a blade, a hilt and a “jewel” in the hilt.</p>
+
+<ul>
+<li>For the blade, the vertices on a cube were squeezed / merged together in order to create the pointed tip and edges. The normals were “unshared” to create the sharp creases along the edges.</li>
+<li>The handle part of the hilt is a cylinder whose vertices were rotated and scaled to create the rough crescent shape. This was then smoothed to create the final form.</li>
+<li>The remaining parts of the hilt and "jewel" are made up of various spheres and cylinders with the appropriate object transformations applied (scale, rotation, translation)</li>
+</ul>
+
+<p><img width=50% src="maya_kirby_sword.png"><br> 
+<span style="font-size:0.7em;"> 
+Figure 1: Final geometry built in Maya.
+</span></p>
+
+<p>The geometry was then exported out as an "obj" file.</p>
+
+<h2 id="materials-and-lighting-blender">Materials and Lighting: Blender</h2>
+
+<p>Blender was used to create and apply materials to the various parts of the sword. For each material various parameters such as metallic, color, roughness, specular etc were modified as desired. For example the blade was set to
+be 100 percent metallic.
+</p>
+
+<p><img width=90% src="blender_shader.png"><br> 
+<span style="font-size:0.7em;"> 
+Figure 2: Material setup in Blender. 
+</span></p>
+
+<p>To preview lighting, a stock IBL / environment was loaded in. 
+<img width=90% src="blender_ibl.png"><br></p>
+
+<h2 id="web-export-gltf">Web Export: glTF</h2>
+<p>To deploy geometry and materials for the Web, the sword was exported out to a "glTF" file from within Blender.</p>
+
+<h2 id="material-separation-and-review-materialx">Material Separation and Review: MaterialX</h2>
+<p>Materials and material assignments were extracted using a custom utility to create MaterialX materials.</p>
+<p>For previewing materials the MaterialXView (deskop or web) sample program was used. The same environment used in Blender was used in these viewers.</p>
+<p>The final materials can be found in the 
+<a href="../../kirby_sword/index.html">asset library</a>    
+</p>
+
+<p>
+<table width="80%" cellpadding="0">
+<tr>
+<td><img width=90% src="materialxview_kirby_sword.png">
+<td><img width=100% src="materialxview_web_kirby_sword.png">
+</tr>
+</table>
+<span style="font-size:0.7em;"> 
+Figure 3: MaterialX preview in utilities viewers (desktop left, Web right). 
+</span>
+</p>
+    
+<p>Adjustments could be made directly to the material files as necessary or modified in Blender and re-exported and translated.</p>
+<h2 id="deployment">Deployment</h2>
+
+<p>Once satisfied with the sword, the geometry (glTF) and materials (MaterialX) files were deployed. In this case, the sword was used for the 3D rendering for the 
+<a href="../../viewer/index.html">
+digital card viewer project.</a></p>
+<p>    
+<img width=60% src="Kirby_Web_MaterialX_Snapshot2.png"><br>
+<span style="font-size:0.7em;"> 
+Figure 4: Snapshot from 3D view on digital card Web page. 
+</span>
+</p>
+    
+</body>

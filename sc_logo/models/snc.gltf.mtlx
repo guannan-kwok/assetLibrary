@@ -28,6 +28,6 @@
     <input name="surfaceshader" type="surfaceshader" nodename="SHADER_Pink_Material" />
   </surfacematerial>
   <look name="look1">
-    <materialassign name="materialassign1" material="Pink_Material" geom="/SCLogo/Bottom_S/Curve, /SCLogo/C/Curve.001, /SCLogo/Top_S/Curve.002, /Curve.002/HairStudio.001" />
+    <materialassign name="materialassign1" material="Pink_Material" geom="SCLogo/Bottom_S, SCLogo/C, SCLogo/Top_S, Curve_002" />
   </look>
 </materialx>

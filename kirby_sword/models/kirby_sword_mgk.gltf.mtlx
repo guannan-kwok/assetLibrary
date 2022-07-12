@@ -82,8 +82,8 @@
     <input name="surfaceshader" type="surfaceshader" nodename="SHADER_kirby_sword_handle" />
   </surfacematerial>
   <look name="look1">
-    <materialassign name="materialassign1" material="kirby_sword_blade" geom="/kirby_sword_blade/kirby_sword_blade" />
-    <materialassign name="materialassign2" material="kirby_sword_gold" geom="/kirby_sword_gold/kirby_sword_gold" />
-    <materialassign name="materialassign3" material="kirby_sword_handle" geom="/kirby_sword_andle/kirby_sword_handle" />
+    <materialassign name="materialassign1" material="kirby_sword_blade" geom="kirby_sword_blade" />
+    <materialassign name="materialassign2" material="kirby_sword_gold" geom="kirby_sword_gold" />
+    <materialassign name="materialassign3" material="kirby_sword_handle" geom="kirby_sword_andle" />
   </look>
 </materialx>

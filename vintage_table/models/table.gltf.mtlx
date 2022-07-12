@@ -94,8 +94,8 @@
     <input name="surfaceshader" type="surfaceshader" nodename="SHADER_knob_material" />
   </surfacematerial>
   <look name="look1">
-    <materialassign name="materialassign1" material="table_body_material" geom="/right_drawer_front/right_drawer_front_mesh, /table_top/table_top_mesh, /left_drawer_front/left_draw_front_mesh" />
-    <materialassign name="materialassign2" material="wood" geom="/left_drawer_back/left_drawer_back_mesh, /left_back_leg/legt_back_leg_mesh, /left_front_leg/left_front_leg_mesh, /right_front_leg/right_front_leg_mesh, /right_back_leg/right_back_leg_mesh, /right_drawer_back/right_draw_back_mesh" />
-    <materialassign name="materialassign3" material="knob_material" geom="/knob_left/knob_left_mesh, / knob_right/knob_right_mesh" />
+    <materialassign name="materialassign1" material="table_body_material" geom="right_drawer_front, table_top, left_drawer_front" />
+    <materialassign name="materialassign2" material="wood" geom="left_drawer_back, left_back_leg, left_front_leg, right_front_leg, right_back_leg, right_drawer_back" />
+    <materialassign name="materialassign3" material="knob_material" geom="knob_left, knob_right" />
   </look>
 </materialx>

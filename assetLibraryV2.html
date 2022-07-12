@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+        <!-- Css stylesheet-->
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Google fonts/icons-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+      </head>
+
+    <body class="homepage"> 
+      
+      <nav class="spacing navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <container>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <b class="text-white">Sections</b>
+          </button>  
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto mb-0 h5 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" aria-current="page" href="assetLibraryV2.html">Asset Library</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="assetDocumentation.html">Asset Documentation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="viewer/index.html">Digital Card Viewer</a>
+              </li>
+              <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+                      Other Projects
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                      <li><a class="dropdown-item" href="https://digitalcard.myportfolio.com/">Digital Card Documentation</a></li>
+                      <li><a class="dropdown-item" href="https://matthewkwok.myportfolio.com/digital-card-project">Main Portfolio</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </ul>
+          </div>
+        </container>
+      </nav>
+      <!--
+      
+        <div class='row spacing'>
+          <div class='col-md-4'>
+            <h1> <b>Asset Library</b></h1>
+          <a href="index.html"><h4>Back to Homepage</h4></a>
+          </div>
+        </div>
+
+      -->
+        <br><br><br>
+        <div class='row spacing'>
+          
+          <!-- LEFT COLUMN -->
+            <div class='col-md-4'>
+              
+              <nav id="navbar-example3" class="navbar navbar-dark bg-dark flex-column align-items-stretch p-4">
+                <a class="navbar-brand" href="#">Categories</a>
+                <nav class="nav nav-pills flex-column" >
+                  <a class="nav-link active link-color" href="#all" data-category="all" onclick="filterSelection('all')">All</a>
+                  <a class="nav-link link-color" href="#character" data-category="character" onclick="filterSelection('character')">Characters</a>
+                  <!-- 
+                  <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
+                    <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
+                  </nav>
+                -->
+                  <a class="nav-link link-color" href="#prop" data-category="prop" onclick="filterSelection('prop')">Props</a>
+                  <a class="nav-link link-color" href="#logo" data-category="logo" onclick="filterSelection('logo')">Logos</a>
+                  <a class="nav-link link-color" href="#advertisement" data-category="advertisement" onclick="filterSelection('advertisement')">Advertisment</a>
+                  <!-- 
+                  <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
+                    <a class="nav-link ms-3 my-1" href="#item-3-2">Item 3-2</a>
+                  </nav>
+                -->
+                </nav>
+              </nav>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class='col-md-8'>
+              <!-- 3 by 3 grid-->
+              <div class='row'>
+                <div class="project asset col-md-3" data-category="character">
+                  <a href="kirby/index.html" class="link-color">
+                    <img class="d-block w-100" src="kirby/renders/kirby_machine.png" alt="Kirby">
+                    <p>Kirby</p>
+                  </a>
+                </div>
+
+                <div class="project asset col-md-3" data-category="prop">
+                  <a href="kirby_sword/index.html" class="link-color">
+                    <img class="d-block w-100" src="kirby_sword/renders/kirby_machine.png" alt="Sword">
+                    <p>Sword</p>
+                  </a>
+                </div>
+
+                <div class="project asset col-md-3" data-category="prop" >
+                  <a href="kirby_hammer/index.html" class="link-color">
+                    <img class="d-block w-100" src="kirby_hammer/renders/kirby_hammer_machine.png" alt="Hammer">
+                    <p>Hammer</p>
+                  </a>
+                </div>
+
+                <div class="project asset col-md-3" data-category="prop" >
+                  <a href="vintage_table/index.html" class="link-color">
+                    <img class="d-block w-100" src="vintage_table/renders/table_machine.png" alt="Vintage Table">
+                  <p>Table</p>
+                  </a>
+                </div>
+
+                <div class="project asset col-md-3" data-category="prop" >
+                  <a href="vintage_tv/index.html" class="link-color">
+                    <img class="d-block w-100" src="vintage_tv/renders/vintage_tv_garage2.png" alt="Retro TV">
+                  <p >Retro TV</p>
+                  </a>
+                </div>
+
+                <div class="project asset col-md-3" data-category="prop" >
+                  <a href="remote/index.html" class="link-color">
+                    <img class="d-block w-100" src="remote/renders/remote_garage_square.png" alt="TV Remote">
+                  <p>TV Remote</p>
+                  </a>
+                </div>
+
+                <div class="project asset col-md-3" data-category="logo" >
+                  <a href="sc_logo/index.html" class="link-color">
+                    <img class="d-block w-100" src="sc_logo/renders/sc_machine.png" alt="S&C Logo">
+                  <p>S&C Logo</p>
+                  </a>
+                </div>
+
+                <div class="project asset col-md-3" data-category="prop" >
+                  <a href="bottle/index.html" class="link-color">
+                  <img class="d-block w-100" src="bottle/renders/bottle_materialXView.png" alt="Legion Energy Drink">
+                  <p>Energy Drink</p>
+                  </a>
+                </div>
+
+                <div class="project asset col-md-3" data-category="advertisement" >
+                  <a href="legion_logo/index.html" class="link-color">
+                    <img class="d-block w-100" src="legion_logo/renders/legion_logo_desert_persp.png" alt="Advertisement Font">
+                  <p>Legion Font</p>
+                  </a>
+                </div>
+
+                <div class="project asset col-md-3" data-category="advertisement" >
+                  <a href="cards/index.html" class="link-color">
+                    <img class="d-block w-100" src="cards/renders/pink_card.png" alt="Advertisement Font">
+                  <p>3D Cards</p>
+                  </a>
+                </div>
+
+                <div class="project asset col-md-3" data-category="advertisement" >
+                  <a href="advertisement/index.html" class="link-color">
+                    <img class="d-block w-100" src="advertisement/renders/poster_final_3d_2.png" alt="Digital Card Advertisement">
+                  <p>Legion Ad</p>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+        </div>
+      
+        <script>
+          filterSelection("all")
+
+          function filterSelection(filterCategory) {
+            var items, i;
+            items = document.getElementsByClassName("asset");
+            for (item of items) 
+            {
+              var category = item.dataset.category;
+              if (filterCategory == category || filterCategory == "all")
+              {              
+                item.style.display = "block";
+              }
+              else
+              {
+                //console.log("Hide: ", item);
+                item.style.display = "none";
+              }
+            }
+
+            items = document.getElementsByClassName("nav-link");
+            for (item of items) 
+            {
+              var category = item.dataset.category;
+              if (filterCategory == category)
+              {              
+                item.classList.add("active");
+                //console.log("make active: ", item);
+              }
+              else
+              {
+                item.classList.remove("active");
+              }
+            }
+
+          }
+        </script
+        
+    </body>
+
+</html>

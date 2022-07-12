@@ -21,26 +21,76 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         
       </head>
 
+      
 
       <body class="homepage">
+        
+        <nav class="spacing navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+          <container>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              <b class="text-white">Sections</b>
+            </button>  
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto mb-0 h5 mb-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="assetLibraryV2.html">Asset Library</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="assetDocumentation.html">Asset Documentation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="viewer/index.html">Digital Card Viewer</a>
+                </li>
+                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                  <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Other Projects
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a class="dropdown-item" href="https://digitalcard.myportfolio.com/">Digital Card Documentation</a></li>
+                        <li><a class="dropdown-item" href="https://matthewkwok.myportfolio.com/digital-card-project">Main Portfolio</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </ul>
+            </div>
+          </container>
+        </nav>
+        
+        
         <div class='row spacing'>
             <div class="col-md-12">
-                
-                <h1> <b>Introduction</b></h1>
-                <p>This homepage contains the asset libary for various models, documentation for 3D assets and a viewer for an interactable digital card.</p> 
-                <p>Click on one of the cards below to access each section.</p>
-                <h3> Other Projects</h3>
-                <a href="https://digitalcard.myportfolio.com/" rel="noopener noreferrer">Digital Card Project Documentation</a> <br>
+                <br><br><br>
+                <h2><b>Introduction</b></h2>
+                <p>This site contains an asset library and with related documentation which is used by various dependent projects. 
+                  The web interface for an interactive digital card project is included as part of this site.</p> 
+                <h4>Related Sites</h4>
+                <a href="https://digitalcard.myportfolio.com/" rel="noopener noreferrer">Digital Card Project Documentation</a>
+                : Documentation for the digital card project. 
+                <br>
                 <a href="https://matthewkwok.myportfolio.com/digital-card-project" rel="noopener noreferrer">Main Portfolio</a>
+                : Main portfolio of work.
               
+                <div class="border-top my-3"><br>
+                  <p>Click on one of the cards below to access each section.</p>
+                </div>
+
               <div class='row'>
                 <div class="col-md-3">
                   <br>
-                    <a href="assetLibrary.html"><img class="d-block w-100" src="documentation/assetLibrary.png" alt="assets picture"></a>
+                    <a href="assetLibraryV2.html"><img class="d-block w-100" src="documentation/assetLibrary.png" alt="assets picture"></a>
                 </div>
 
                 <div class="col-md-3">
@@ -56,6 +106,7 @@
               </div>  
             </div>
         </div>
+        <!--<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class=" spacing twitter-share-button  fa fa-twitter " data-size="large" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><br> -->
         <a class="spacing" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
           <img alt="Creative Commons License" style="border-width:0"
             src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>

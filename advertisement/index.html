@@ -30,222 +30,362 @@
 </head>
 
 <body>
-  <!-- Model Thumbnail and Description -->
   <section>
-    <div class='row spacing'>
-      <div class="col-md-4">
-        <div class='row'>
-          <div class="col-md-12">
-            <div id="modelCarousel" class="carousel slide" data-ride="carousel" data-interval="12000">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img class="d-block w-100" src="renders/Poster Final.png" alt="Final Poster">
-                </div>
-                <div class="carousel-item ">
-                  <img class="d-block w-100" src="renders/poster_final_3d_1.png" alt="3d Snapshot 1">
-                </div>
-                <div class="carousel-item ">
-                  <img class="d-block w-100" src="renders/poster_final_3d_3.png" alt="3d Snapshot 3">
-                </div>
-                <div class="carousel-item ">
-                  <img class="d-block w-100" src="renders/poster_final_3d_2.png" alt="3d Snapshot 2">
-                </div>
-                <div class="carousel-item ">
-                  <img class="d-block w-100" src="renders/poster_final_3d_4.png" alt="3d Snapshot 4">
-                </div>
-                <div class="carousel-item ">
-                  <img class="d-block w-100" src="renders/advertisement_geometry1.png" alt="Geometry Snapshot 1">
-                </div>
-                <div class="carousel-item ">
-                  <img class="d-block w-100" src="renders/advertisement_geometry2.png" alt="Geometry Snapshot 2">
-                </div>
-                <div class="carousel-item ">
-                  <img class="d-block w-100" src="renders/advertisement_geometry3.png" alt="Geometry Snapshot 3">
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#modelCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#modelCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
+    <!--
+    <div class='row-md-4 spacing'>
+      <a href="../assetLibraryV2.html">
+        <h4>Back to Library</h4>
+      </a>
+    </div>
+    -->
+    
+    <nav class="spacing navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <container>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          <b class="text-white">Sections</b>
+        </button>  
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto mb-0 h5 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="../assetLibraryV2.html">Asset Library</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../assetDocumentation.html">Asset Documentation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../viewer/index.html">Digital Card Viewer</a>
+            </li>
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+                    Other Projects
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                    <li><a class="dropdown-item" href="https://digitalcard.myportfolio.com/">Digital Card Documentation</a></li>
+                    <li><a class="dropdown-item" href="https://matthewkwok.myportfolio.com/digital-card-project">Main Portfolio</a></li>
+                  </ul>
+                </li>
+              </ul>
             </div>
-          </div>
+          </ul>
+        </div>
+      </container>
+    </nav>
 
-          <div class="d-flex justify-content-center col-md-12">
-            <p><a href="https://matthewkwok.myportfolio.com/digital-card-project" target="_blank"
-                rel="noopener noreferrer">Project Site</a> <br>
-              Dimensions: 7K by 10K pixels. 50 x 50 x 24 cm (excluding backing plane).<br>
-              Notes: Original poster design</p>
+    <br><br><br>
+
+    <!-- TOP -->
+    <div class='row spacing'>
+      <!-- Model Renders -->
+      <div class="col-md-6">
+        <div id="modelCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="renders/Poster Final.png" alt="Final Poster">
+            </div>
+            <div class="carousel-item ">
+              <img class="d-block w-100" src="renders/poster_final_3d_1.png" alt="3d Snapshot 1">
+            </div>
+            <div class="carousel-item ">
+              <img class="d-block w-100" src="renders/poster_final_3d_3.png" alt="3d Snapshot 3">
+            </div>
+            <div class="carousel-item ">
+              <img class="d-block w-100" src="renders/poster_final_3d_2.png" alt="3d Snapshot 2">
+            </div>
+            <div class="carousel-item ">
+              <img class="d-block w-100" src="renders/poster_final_3d_4.png" alt="3d Snapshot 4">
+            </div>
+            <div class="carousel-item ">
+              <img class="d-block w-100" src="renders/advertisement_geometry1.png" alt="Geometry Snapshot 1">
+            </div>
+            <div class="carousel-item ">
+              <img class="d-block w-100" src="renders/advertisement_geometry2.png" alt="Geometry Snapshot 2">
+            </div>
+            <div class="carousel-item ">
+              <img class="d-block w-100" src="renders/advertisement_geometry3.png" alt="Geometry Snapshot 3">
+            </div>
+
+          </div>
+          <a class="carousel-control-prev" href="#modelCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#modelCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div> <!-- carousel-->
+      </div> <!-- render column -->
+
+      <!-- Description column -->
+      <div class="col-md-5">
+        <div class="d-flex justify-content-left row-md-12">
+          <h2>Digital Card 3D Poster</h2>
+        </div>
+
+        <div class="d-flex justify-content-left row-md-12">
+          <strong>
+            <a href="https://matthewkwok.myportfolio.com/digital-card-project" target="_blank"
+              rel="noopener noreferrer">
+              Project Site</a>
+          </strong>
+        </div>
+
+        <div class="border-top my-3"></div>
+
+        <div class="d-flex justify-content-left row-md-12">
+          <small>
+            <p><strong>Description</strong>: Retro poster created in 3D
+              to cross-promote the 3D digital card product with an
+              energy drink, under the "Legion" brand.
+            </p>
+            <p>
+              All elements of the poster are 3D assets.
+              Each 3d character and prop was created separately and
+              referenced into a master file. Some material properties were
+              overridden to give variation (e.g. Kirby colors). The 3D cards,
+              backdrop, and text were imported from Photoshop, Illustrator, and 
+              Figma. The card images are snapshots from the  
+              digital card web page or imports from Figma.
+            </p>
+          </small>
+        </div>
+
+        <div class="d-flex justify-content-left row-md-12">
+          <small>
+            <p>
+              <strong>Poster Dimensions</strong>: 7K by 19K pixels. <br>
+              <strong>Model Dimensions</strong>: 50 x 50 x 24 cm (excluding backing plane)
+            </p>
+          </small>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Resource Section -->
+    <div class='row spacing'>
+      <div class="col-md-12">
+        <b>Resources</b>
+        <!-- <p><a href="models/kirby.mtlx" target="_blank" download="kirby.mtlx">
+            Material File</a>
+        </p> -->
+        <div class="border-top my-3"></div>
+      </div>
+
+      <!-- template item to add to carousel -->
+      <div style="display: none">
+        <div class="carousel-item" id="template_carousel_item">
+          <!-- Row is filled in based on number of resources to show at a given time -->
+          <div class="row">
           </div>
         </div>
       </div>
 
-      <!-- Resource Section -->
-      <div class="col-md-8 scroll">
-        <h12><b>Resources</b></h1>
+      <div id="resourceCarousel" class="carousel slide" data-bs-ride="carousel" data-interval="false">
+        <div class="carousel-inner" role="listbox" id="template_carousel_inner">
+          <!-- This is filled in dynamically based on the number of resources -->
+        </div>
+        <a class="carousel-control-prev" href="#resourceCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#resourceCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div> <!-- carousel-->
+
+      <div class="col-md-12">
+        <div class="border-top my-3"></div>
+      </div>
+
+      <!-- List of resource to fill in the carousel items with -->
+      <div id="resource_items" style="display: none;">
+
+        <div class="col-md">
           <div class='row'>
-
-            <div class="col-md-3">
-              <div class='row'>
-                <div class="d-flex justify-content-center col-md-12">
-                  <img class="resources img-fluid" src="images/poster_layout_final_small.png">
-                </div>
-                <div class=" d-flex justify-content-center col-md-12">
-                  2D Poster Mockup
-                </div>
-              </div>
+            <div class="d-flex justify-content-center col-md-12">
+              <img class="resources img-fluid" src="images/poster_layout_final_small.png">
             </div>
-
-            <div class="col-md-3">
-              <div class='row'>
-                <div class="d-flex justify-content-center col-md-12">
-                  <img class="resources img-fluid" src="images/purple_bg.png">
-                </div>
-                <div class=" d-flex justify-content-center col-md-12">
-                  Background image (3D)
-                </div>
-              </div>
+            <div class=" d-flex justify-content-center col-md-12">
+              2D Poster Mockup
             </div>
-
-            <div class="col-md-3">
-              <div class='row'>
-                <div class=" d-flex justify-content-center col-md-12">
-                  <img class=" resources img-fluid" src="images/JOIN THE LEGION.svg">
-                </div>
-                <div class=" d-flex justify-content-center col-md-12">
-                  Catch Phrase (3D)
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class='row'>
-                <div class=" d-flex justify-content-center col-md-12">
-                  <img class=" resources img-fluid" src="images/LEGION.png">
-                </div>
-                <div class=" d-flex justify-content-center col-md-12">
-                  "Legion" Text (3D)
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class='row'>
-                <div class="d-flex justify-content-center col-md-12">
-                  <img class="resources img-fluid" src="images/description.svg">
-                </div>
-                <div class=" d-flex justify-content-center col-md-12">
-                  Advertisement Text (2D)
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class='row'>
-                <div class="d-flex justify-content-center col-md-12">
-                  <img class="resources img-fluid" src="../vintage_table/renders/table_machine.png">
-                </div>
-                <div class=" d-flex justify-content-center col-md-12">
-                  Vintage Table (referenced)
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class='row'>
-                <div class="d-flex justify-content-center col-md-12">
-                  <img class="resources img-fluid" src="../vintage_tv/renders/vintage_tv_garage2.png">
-                </div>
-                <div class=" d-flex justify-content-center col-md-12">
-                  Vintage TV (referenced)
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class='row'>
-                <div class="d-flex justify-content-center col-md-12">
-                  <img class="resources img-fluid" src="../kirby/renders/kirby_machine.png">
-                </div>
-                <div class=" d-flex justify-content-center col-md-12">
-                  Kirby (2x referenced)
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class='row'>
-                <div class="d-flex justify-content-center col-md-12">
-                  <img class="resources img-fluid" src="../bottle/renders/bottle.png">
-                </div>
-                <div class=" d-flex justify-content-center col-md-12">
-                  Bottle (referenced)
-                </div>
-              </div>
-            </div>    
-            
-            <div class="col-md-3">
-              <div class='row'>
-                <div class="d-flex justify-content-center col-md-12">
-                  <img class="resources img-fluid" src="../remote/renders/remote_garage.png">
-                </div>
-                <div class=" d-flex justify-content-center col-md-12">
-                  Remote (referenced)
-                </div>
-              </div>
-            </div>                     
-
-            <div class="col-md-3">
-              <div class='row'>
-                <div class="d-flex justify-content-center col-md-12">
-                  <img class="resources img-fluid" src="images/duck_hunt_card.png">
-                </div>
-                <div class=" d-flex justify-content-center col-md-12">
-                  Card variant 1
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class='row'>
-                <div class="d-flex justify-content-center col-md-12">
-                  <img class="resources img-fluid" src="images/kirby_card.png">
-                </div>
-                <div class=" d-flex justify-content-center col-md-12">
-                  Card variant 2
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class='row'>
-                <div class="d-flex justify-content-center col-md-12">
-                  <img class="resources img-fluid" src="images/kirby_card_clear.png">
-                </div>
-                <div class=" d-flex justify-content-center col-md-12">
-                  Card variant 3
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class='row'>
-                <div class="d-flex justify-content-center col-md-12">
-                  <img class="resources img-fluid" src="images/kirby_card_blue.png">
-                </div>
-                <div class=" d-flex justify-content-center col-md-12">
-                  Card variant 4
-                </div>
-              </div>
-            </div>
-
           </div>
+        </div>
+
+        <div class="col-md">
+          <div class='row'>
+            <div class="d-flex justify-content-center col-md-12">
+              <img class="resources img-fluid" src="images/purple_bg.png">
+            </div>
+            <div class=" d-flex justify-content-center col-md-12">
+              Background image (3D)
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md">
+          <div class='row'>
+            <div class=" d-flex justify-content-center col-md-12">
+              <img class=" resources img-fluid" src="images/JOIN THE LEGION.svg">
+            </div>
+            <div class=" d-flex justify-content-center col-md-12">
+              <p>Catch Phrase (3D)</p>
+            </div>
+          </div>
+          <div class='row'>
+            <div class=" d-flex justify-content-center col-md-12">
+              <img class=" resources img-fluid" src="images/LEGION.png">
+            </div>
+            <div class=" d-flex justify-content-center col-md-12">
+              <p>"Legion" Text (3D reference)</p>
+            </div>
+          </div>
+          <div class='row'>
+            <div class="d-flex justify-content-center col-md-12">
+              <img class="resources img-fluid" src="images/description.svg">
+            </div>
+            <div class=" d-flex justify-content-center col-md-12">
+              <p>Advertisement Text (2D)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md">
+          <div class='row'>
+            <div class="d-flex justify-content-center col-md-12">
+              <img class="resources img-fluid" src="../cards/renders/cards_garages_flat1.png">
+            </div>
+            <div class=" d-flex justify-content-center col-md-12">
+              Digital Cards (3D references)
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md">
+          <div class='row'>
+            <div class="d-flex justify-content-center col-md-12">
+              <img class="resources img-fluid" src="../vintage_table/renders/table_machine.png">
+            </div>
+            <div class=" d-flex justify-content-center col-md-12">
+              Vintage Table (3D reference)
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md">
+          <div class='row'>
+            <div class="d-flex justify-content-center col-md-12">
+              <img class="resources img-fluid" src="../vintage_tv/renders/vintage_tv_garage2.png">
+            </div>
+            <div class=" d-flex justify-content-center col-md-12">
+              Vintage TV (3D reference)
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md">
+          <div class='row'>
+            <div class="d-flex justify-content-center col-md-12">
+              <img class="resources img-fluid" src="../kirby/renders/kirby_machine.png">
+            </div>
+            <div class=" d-flex justify-content-center col-md-12">
+              Kirby (3D references)
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md">
+          <div class='row'>
+            <div class="d-flex justify-content-center col-md-12">
+              <img class="resources img-fluid" src="../bottle/renders/bottle_machine.png">
+            </div>
+            <div class=" d-flex justify-content-center col-md-12">
+              Bottle (3D reference)
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md">
+          <div class='row'>
+            <div class="d-flex justify-content-center col-md-12">
+              <img class="resources img-fluid" src="../remote/renders/remote_garage_square.png">
+            </div>
+            <div class=" d-flex justify-content-center col-md-12">
+              Remote (3D reference)
+            </div>
+          </div>
+        </div>      
 
       </div>
+
+    </div>
   </section>
+
+  <script>
+    
+    buildMultiCarousel("resource", 5);
+
+    function buildMultiCarousel(itemType, itemsPerGroup) {
+      var resource_items = [];
+      let resources = document.getElementById("resource_items");
+      var number_of_resources = resources.children.length;
+      if (itemsPerGroup > number_of_resources) {
+        itemsPerGroup = number_of_resources;
+      }
+      for (var c = 0; c < resources.children.length; c++) {
+        resource_items.push(resources.children[c]);
+      }
+      //console.log("source items:", items);
+
+      var template_inner = document.getElementById("template_carousel_inner");
+      var template_item = document.getElementById("template_carousel_item");
+
+      // Do this for the number of resource items
+      for (var resource_number = 0; resource_number < resource_items.length; resource_number++) {
+        // Start filling based on which item were looking at.
+        var start_resource = resource_number;
+
+        // Create a new carousel item based on the template item
+        // and add to carousel list 
+        var target_item = template_item.cloneNode(true);
+        template_inner.appendChild(target_item);
+
+        // Set id (for debugging only).
+        //target_item.id = resource_number;
+
+        // Set first carousel item active by default
+        if (resource_number == 0) {
+          target_item.classList.add("active");
+        }
+        //console.log("---- update carousel item: ", target_item);
+
+        // Append "itemsPerGroup" number of resource items to
+        // the row for the current carousel item.
+        for (var resource_offset = 0; resource_offset < itemsPerGroup; resource_offset++) {
+          // Use modulo to wrap around 
+          var itemIndex = (start_resource + resource_offset) % resource_items.length;
+          // Create a copy of the resource item
+          newItem = resource_items[itemIndex].cloneNode(true);
+          //console.log("add: ", newItem)
+
+          // Add to "row" for the carousel item
+          var rowItem = target_item.children[0];
+          rowItem.appendChild(newItem);
+        }
+      }
+    }
+
+  </script>
+
 </body>
 
 </html>

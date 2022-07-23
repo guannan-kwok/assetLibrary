@@ -16,6 +16,10 @@
     padding: 20px 100px;
   }
 
+  .spacing2{
+    padding: 0px 100px;
+  }
+
 .resources{
     width: 100%;   
 }
@@ -80,7 +84,64 @@ nav {
   color: white;
 }
 
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+}
 
-p{
-  font-size: 12px;
+
+ 
+.social .fbtn {
+  width: 50px;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  line-height: 18px;
+  float: left;
+}
+.social .fa {
+  padding: 15px 0px
+}
+.facebook {
+  background-color: #3b5998;
+}
+.twitter {
+  background-color: #55acee;
+}
+
+.pinterest {
+  background-color: #cc2127;
+}
+.linkedin {
+  background-color: #0077b5;
+}
+.buffer {
+  background-color: #323b43;
+}
+.share-button.sharer {
+  height: 20px;
+  padding: 100px;
+}
+.share-button.sharer .social.active.top {
+  transform: scale(1) translateY(-10px);
+}
+.share-button.sharer .social.active {
+  opacity: 1;
+  transition: all 0.4s ease 0s;
+  visibility: visible;
+}
+.share-button.sharer .social.networks-5 {} .share-button.sharer .social.top {
+  margin-top: -80px;
+  transform-origin: 0 0 0;
+}
+.share-button.sharer .social {
+  margin-left: -65px;
+  opacity: 0;
+  transition: all 0.4s ease 0s;
+  visibility: hidden;
 }
